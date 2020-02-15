@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'BurbankBigRegular-Black';
+  src: url('BurbankBigRegular-Black.eot?#iefix') format('embedded-opentype'),  url('BurbankBigRegular-Black.otf')  format('opentype'),
+	     url('BurbankBigRegular-Black.woff') format('woff'), url('BurbankBigRegular-Black.ttf')  format('truetype'), url('BurbankBigRegular-Black.svg#BurbankBigRegular-Black') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

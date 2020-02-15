@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+
+@import "./config/variables";
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+@font-face {
+  font-family: "BurbankBigRegular-Black";
+  src: url("./fonts/BurbankBigRegular-Black.eot?#iefix")
+      format("embedded-opentype"),
+    url("./fonts/BurbankBigRegular-Black.otf") format("opentype"),
+    url("./fonts/BurbankBigRegular-Black.woff") format("woff"),
+    url("./fonts/BurbankBigRegular-Black.ttf") format("truetype"),
+    url("./fonts/BurbankBigRegular-Black.svg#BurbankBigRegular-Black")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background: linear-gradient(to bottom right, darken($blue, 15%), $cyan);
+  min-height: 100vh;
+}
+
+.App {
+  padding-top: 2 * $spacer;
+  padding-bottom: 4 * $spacer;
+  font-family: "Open Sans", sans-serif;
+  h1,
+  h2,
+  h3,
+  .badge,
+  .btn,
+  .card-title {
+    line-height: 0.8;
+    font-family: "BurbankBigRegular-Black", cursive;
+    font-weight: 400;
+  }
+  h1,
+  .btn {
+    text-transform: uppercase;
+  }
+  .App-header {
+    margin-bottom: 4 * $spacer;
+    text-align: center;
+  }
+}
+
+.card {
+  border: 0;
+  margin: 1.25rem 0 30px;
+  .card-body {
+    padding-top: 0;
+    .card-title {
+      line-height: 0;
+      text-align: center;
+      margin-bottom: 2 * $spacer;
+    }
+  }
+}
+
+.PlayerStats {
+  margin-bottom: $spacer;
+  .PlayerStats-header {
+    margin-bottom: $spacer;
+    .PlayerStats-level {
+      color: lighten($cyan, 30%);
+      text-transform: uppercase;
+      span {
+        color: $light;
+      }
+    }
+  }
+  .PlayerStats-stat {
+    display: flex;
+    font-family: "BurbankBigRegular-Black", cursive;
+    .PlayerStats-stat-name {
+      position: relative;
+      overflow: hidden;
+      flex-grow: 1;
+      color: lighten($cyan, 30%);
+      text-transform: uppercase;
+      &::after {
+        position: absolute;
+        display: inline-block;
+        content: ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .";
+        padding-left: 0.5em;
+      }
+    }
+    .PlayerStats-stat-value {
+      flex-grow: 0;
+      padding-left: 0.5em;
+      color: $light;
+    }
+  }
+}
