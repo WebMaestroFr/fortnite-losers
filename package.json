@@ -10,7 +10,7 @@
     "lint": "yarn lint:ts && yarn lint:css",
     "lint:ts": "tslint --project tsconfig.json -c tslint.json src/**/*.{ts,tsx}",
     "lint:css": "stylelint --formatter verbose src/**/*.{css,scss}",
-    "predeploy": "PUBLIC_URL=\"/dna-client\" yarn build",
+    "predeploy": "PUBLIC_URL=\"/fortnite-losers\" yarn build",
     "deploy": "gh-pages -d build"
   },
   "dependencies": {

@@ -21,7 +21,7 @@ const AppContent: FC = () => {
   const { tab } = useNavigation();
   switch (tab) {
     case "challenges":
-      return <>Challenges</>;
+      return <>Under construction.</>;
     default:
       return <PlayerList usernames={USERNAMES} />;
   }
