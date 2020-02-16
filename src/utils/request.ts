@@ -11,7 +11,7 @@ import API_CONFIG from "../config/api.json";
 const api = setup({
   baseURL: "https://fortniteapi.io",
   cache: {
-    maxAge: 12 * 1000
+    maxAge: 60 * 1000
   },
   headers: {
     ...API_CONFIG,
