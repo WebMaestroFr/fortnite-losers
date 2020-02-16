@@ -20,8 +20,3 @@ jobs:
 
       - name:           Run CSS Linter
         run:            yarn lint:css
-
-      - name:           Run Tests
-        run:            yarn test
-        env:
-          CI:           true
