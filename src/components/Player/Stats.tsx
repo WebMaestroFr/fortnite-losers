@@ -1,17 +1,20 @@
 import React, { FC, useEffect, useState } from "react";
 import { ProgressBar } from "react-bootstrap";
+import { Pie, PieChart, ResponsiveContainer } from "recharts";
 
-import { formatStatTitle } from "../../utils/format";
+import useNavigation from "../../context/navigation";
+import { formatStatColor, formatStatTitle } from "../../utils/format";
 import { stats } from "../../utils/fortnite";
 
-const PlayerStats: FC<{ accountId: string }> = ({ accountId }) => {
+const PlayerStats: FC<{
+  accountId: string;
+}> = ({ accountId }) => {
   const [playerAccount, setPlayerAccount] = useState<PlayerAccount>();
   const [playerStatsCategories, setPlayerStatsCategories] = useState<
     PlayerStatsCategories
   >();
-  const [selectedCategory, setSelectedCategory] = useState<
-    "duo" | "solo" | "squad"
-  >("solo");
+
+  const { category } = useNavigation();
 
   useEffect(() => {
     const { cancel, request } = stats(accountId);
@@ -23,17 +26,58 @@ const PlayerStats: FC<{ accountId: string }> = ({ accountId }) => {
   }, [accountId]);
 
   const selectedStats =
-    playerStatsCategories &&
-    playerStatsCategories[selectedCategory] &&
-    Object.entries(
-      playerStatsCategories[selectedCategory] as PlayerStats
-    ).filter(
-      ([name]) =>
-        !["placetop3", "placetop5", "placetop6", "placetop12"].includes(name)
+    playerStatsCategories && (playerStatsCategories[category] as PlayerStats);
+
+  const selectedStatsEntries = selectedStats && Object.entries(selectedStats);
+
+  const topStats =
+    selectedStats &&
+    [
+      "placetop1",
+      "placetop3",
+      "placetop5",
+      "placetop6",
+      "placetop10",
+      "placetop12",
+      "placetop25"
+    ].map(name => ({
+      fill: formatStatColor(name),
+      name: formatStatTitle(name),
+      value:
+        selectedStats[
+          name as
+            | "placetop1"
+            | "placetop3"
+            | "placetop5"
+            | "placetop6"
+            | "placetop10"
+            | "placetop12"
+            | "placetop25"
+        ]
+    }));
+  const restValue =
+    selectedStats &&
+    topStats &&
+    topStats.reduce(
+      (rest, { value }) => rest - value,
+      selectedStats.matchesplayed
     );
+  const chartData = topStats && [
+    {
+      fill: formatStatColor("matchesplayed"),
+      name: formatStatTitle("matchesplayed"),
+      value: restValue
+    },
+    ...topStats
+  ];
 
   return (
     <div className="PlayerStats">
+      <ResponsiveContainer aspect={1}>
+        <PieChart width={730} height={250}>
+          <Pie dataKey="value" data={chartData} isAnimationActive={true} />
+        </PieChart>
+      </ResponsiveContainer>
       {playerAccount ? (
         <header className="PlayerStats-header">
           <h3 className="PlayerStats-level">
@@ -42,9 +86,9 @@ const PlayerStats: FC<{ accountId: string }> = ({ accountId }) => {
           <ProgressBar now={playerAccount.progress_pct} />
         </header>
       ) : null}
-      {selectedStats ? (
+      {selectedStatsEntries ? (
         <div className="PlayerStats-content">
-          {selectedStats.map(([name, value], index) => (
+          {selectedStatsEntries.map(([name, value], index) => (
             <div className="PlayerStats-stat" key={index}>
               <span className="PlayerStats-stat-name">
                 {formatStatTitle(name)}

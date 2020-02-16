@@ -1,7 +1,16 @@
 import request from "./request";
 
+export const challenges = (season: string = "current") =>
+  request({
+    params: { season },
+    url: "/challenges"
+  });
+
 export const lookup = (username: string) =>
-  request({ url: "/lookup", params: { username } });
+  request({
+    params: { platform: "psn", username },
+    url: "/lookup"
+  });
 
 export const stats = (account: string) =>
-  request({ url: "/stats", params: { account } });
+  request({ params: { account }, url: "/stats" });

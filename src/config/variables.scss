@@ -596,8 +596,8 @@ $nav-tabs-link-active-bg: $body-bg;
 $nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg;
 
 $nav-pills-border-radius: $border-radius;
-$nav-pills-link-active-color: $component-active-color;
-$nav-pills-link-active-bg: $component-active-bg;
+$nav-pills-link-active-color: darken($blue, 30%);
+$nav-pills-link-active-bg: $white;
 
 // Navbar
 

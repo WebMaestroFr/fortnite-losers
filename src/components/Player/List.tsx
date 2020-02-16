@@ -4,11 +4,16 @@ import { Card, Col, Row } from "react-bootstrap";
 import { lookup } from "../../utils/fortnite";
 import PlayerStats from "./Stats";
 
-const PlayerListItem: FC<{ username: string }> = ({ username }) => {
+const PlayerListItem: FC<{
+  username: string;
+}> = ({ username }) => {
   const [accountId, setAccountId] = useState<string>();
   useEffect(() => {
     const { cancel, request } = lookup(username);
-    request.then(({ account_id }) => setAccountId(account_id), console.error);
+    request.then(user => {
+      console.warn(user);
+      setAccountId(user.account_id);
+    }, console.error);
     return cancel;
   }, [username]);
   return (

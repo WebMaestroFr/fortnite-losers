@@ -1,3 +1,21 @@
+export const formatStatColor = (name: string) => {
+  switch (name) {
+    case "placetop1":
+      return "#ffc107";
+    case "placetop3":
+    case "placetop5":
+      return "#6f42c1";
+    case "placetop6":
+    case "placetop10":
+      return "#007bff";
+    case "placetop12":
+    case "placetop25":
+      return "#28a745";
+    default:
+      return "#ccc";
+  }
+};
+
 export const formatStatTitle = (name: string) => {
   switch (name) {
     case "placetop1":

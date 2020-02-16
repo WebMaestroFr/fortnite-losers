@@ -16,6 +16,15 @@
   font-style: normal;
 }
 
+.fortnite-style {
+  font-family: "BurbankBigRegular-Black", cursive;
+  font-weight: 400;
+}
+.fortnite-style-uppercase {
+  @extend .fortnite-style;
+  text-transform: uppercase;
+}
+
 body {
   background: linear-gradient(to bottom right, darken($blue, 15%), $cyan);
   min-height: 100vh;
@@ -26,21 +35,19 @@ body {
   padding-bottom: 4 * $spacer;
   font-family: "Open Sans", sans-serif;
   h1,
+  .btn {
+    @extend .fortnite-style-uppercase;
+  }
+  h1,
   h2,
   h3,
   .badge,
   .btn,
   .card-title {
-    line-height: 0.8;
-    font-family: "BurbankBigRegular-Black", cursive;
-    font-weight: 400;
-  }
-  h1,
-  .btn {
-    text-transform: uppercase;
+    @extend .fortnite-style;
   }
   .App-header {
-    margin-bottom: 4 * $spacer;
+    margin-bottom: $spacer;
     text-align: center;
   }
 }
@@ -58,31 +65,48 @@ body {
   }
 }
 
+.navbar {
+  @extend .fortnite-style-uppercase;
+  padding: 0;
+  margin-bottom: 2 * $spacer;
+  .navbar-nav {
+    .nav-link {
+      color: $white;
+      &:hover {
+        color: lighten($cyan, 30%);
+      }
+      &.active {
+        color: $nav-pills-link-active-color;
+      }
+    }
+  }
+}
+
 .PlayerStats {
-  margin-bottom: $spacer;
+  color: lighten($cyan, 30%);
   .PlayerStats-header {
     margin-bottom: $spacer;
     .PlayerStats-level {
-      color: lighten($cyan, 30%);
-      text-transform: uppercase;
+      @extend .fortnite-style-uppercase;
       span {
         color: $light;
       }
     }
   }
   .PlayerStats-stat {
+    @extend .fortnite-style-uppercase;
     display: flex;
-    font-family: "BurbankBigRegular-Black", cursive;
     .PlayerStats-stat-name {
       position: relative;
       overflow: hidden;
       flex-grow: 1;
-      color: lighten($cyan, 30%);
-      text-transform: uppercase;
       &::after {
         position: absolute;
         display: inline-block;
-        content: ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .";
+        content: ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+          " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+          " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+          " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .";
         padding-left: 0.5em;
       }
     }
