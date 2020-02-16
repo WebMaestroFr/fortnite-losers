@@ -59,6 +59,7 @@ body {
     padding-top: 0;
     .card-title {
       line-height: 0;
+      margin-bottom: 2 * $spacer;
       text-align: center;
     }
   }
@@ -84,7 +85,6 @@ body {
 .PlayerStats {
   color: lighten($cyan, 30%);
   .PlayerStats-header {
-    margin-bottom: $spacer;
     .PlayerStats-level {
       @extend .fortnite-style-uppercase;
       span {

@@ -73,11 +73,6 @@ const PlayerStats: FC<{
 
   return (
     <div className="PlayerStats">
-      <ResponsiveContainer aspect={1}>
-        <PieChart width={730} height={250}>
-          <Pie dataKey="value" data={chartData} isAnimationActive={true} />
-        </PieChart>
-      </ResponsiveContainer>
       {playerAccount ? (
         <header className="PlayerStats-header">
           <h3 className="PlayerStats-level">
@@ -86,6 +81,11 @@ const PlayerStats: FC<{
           <ProgressBar now={playerAccount.progress_pct} />
         </header>
       ) : null}
+      <ResponsiveContainer aspect={1}>
+        <PieChart width={512} height={512}>
+          <Pie dataKey="value" data={chartData} isAnimationActive={true} />
+        </PieChart>
+      </ResponsiveContainer>
       {selectedStatsEntries ? (
         <div className="PlayerStats-content">
           {selectedStatsEntries.map(([name, value], index) => (
