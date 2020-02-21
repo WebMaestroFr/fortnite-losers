@@ -4,24 +4,42 @@ interface PlayerAccount {
 }
 
 interface PlayerStats {
-  placetop1: number;
   kd: number;
-  winrate: number;
-  placetop3: number;
-  placetop5: number;
-  placetop6: number;
-  placetop10: number;
-  placetop12: number;
-  placetop25: number;
   kills: number;
   matchesplayed: number;
   minutesplayed: number;
-  score: number;
+  placetop1: number;
+  placetop10: number;
+  placetop12: number;
+  placetop25: number;
+  placetop3: number;
+  placetop5: number;
+  placetop6: number;
   playersoutlived: number;
+  score: number;
+  winrate: number;
+}
+
+interface PlayerStatsDuo extends PlayerStats {
+  placetop1: number;
+  placetop5: number;
+  placetop12: number;
+}
+
+interface PlayerStatsSolo extends PlayerStats {
+  placetop1: number;
+  placetop10: number;
+  placetop25: number;
+}
+
+interface PlayerStatsSquad extends PlayerStats {
+  placetop1: number;
+  placetop3: number;
+  placetop6: number;
 }
 
 interface PlayerStatsCategories {
-  duo?: PlayerStats;
-  solo?: PlayerStats;
-  squad?: PlayerStats;
+  duo?: PlayerStatsDuo;
+  solo?: PlayerStatsSolo;
+  squad?: PlayerStatsSquad;
 }

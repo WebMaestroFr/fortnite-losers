@@ -116,3 +116,13 @@ body {
     }
   }
 }
+
+.PlayerStats-chart {
+  svg {
+    overflow: visible;
+  }
+  .recharts-pie-label-text {
+    @extend .fortnite-style-uppercase;
+    font-size: 1.2em;
+  }
+}

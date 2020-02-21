@@ -21,11 +21,7 @@ const PlayerListItem: FC<{
       <Card>
         <Card.Body>
           <Card.Title as="h2">{username}</Card.Title>
-          {accountId ? (
-            <Card.Text className="PlayerListItem-content">
-              <PlayerStats accountId={accountId} />
-            </Card.Text>
-          ) : null}
+          {accountId ? <PlayerStats accountId={accountId} /> : null}
         </Card.Body>
       </Card>
     </Col>

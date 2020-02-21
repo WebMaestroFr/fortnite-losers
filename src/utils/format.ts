@@ -4,10 +4,9 @@ export const formatStatColor = (name: string) => {
       return "#ffc107";
     case "placetop3":
     case "placetop5":
-      return "#6f42c1";
-    case "placetop6":
     case "placetop10":
       return "#007bff";
+    case "placetop6":
     case "placetop12":
     case "placetop25":
       return "#28a745";
@@ -16,7 +15,7 @@ export const formatStatColor = (name: string) => {
   }
 };
 
-export const formatStatTitle = (name: string) => {
+export const formatStatTitle = (name?: string) => {
   switch (name) {
     case "placetop1":
       return "Top 1";

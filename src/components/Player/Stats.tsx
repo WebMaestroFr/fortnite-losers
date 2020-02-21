@@ -6,6 +6,15 @@ import useNavigation from "../../context/navigation";
 import { formatStatColor, formatStatTitle } from "../../utils/format";
 import { stats } from "../../utils/fortnite";
 
+type TopStatsName =
+  | "placetop1"
+  | "placetop3"
+  | "placetop5"
+  | "placetop6"
+  | "placetop10"
+  | "placetop12"
+  | "placetop25";
+
 const PlayerStats: FC<{
   accountId: string;
 }> = ({ accountId }) => {
@@ -43,17 +52,7 @@ const PlayerStats: FC<{
     ].map(name => ({
       fill: formatStatColor(name),
       name: formatStatTitle(name),
-      value:
-        selectedStats[
-          name as
-            | "placetop1"
-            | "placetop3"
-            | "placetop5"
-            | "placetop6"
-            | "placetop10"
-            | "placetop12"
-            | "placetop25"
-        ]
+      value: selectedStats[name as TopStatsName]
     }));
   const restValue =
     selectedStats &&
@@ -62,14 +61,19 @@ const PlayerStats: FC<{
       (rest, { value }) => rest - value,
       selectedStats.matchesplayed
     );
-  const chartData = topStats && [
-    {
-      fill: formatStatColor("matchesplayed"),
-      name: formatStatTitle("matchesplayed"),
-      value: restValue
-    },
-    ...topStats
-  ];
+  const chartData =
+    topStats &&
+    [
+      ...topStats,
+      {
+        fill: formatStatColor("matchesplayed"),
+        value: restValue
+      }
+    ]
+      .filter(({ value }) => value)
+      .reverse();
+  const renderLabel = ({ name }: { name?: string }) =>
+    formatStatTitle(name) || "";
 
   return (
     <div className="PlayerStats">
@@ -81,9 +85,20 @@ const PlayerStats: FC<{
           <ProgressBar now={playerAccount.progress_pct} />
         </header>
       ) : null}
-      <ResponsiveContainer aspect={1}>
+      <ResponsiveContainer aspect={1} className="PlayerStats-chart">
         <PieChart width={512} height={512}>
-          <Pie dataKey="value" data={chartData} isAnimationActive={true} />
+          <Pie
+            dataKey="value"
+            data={chartData}
+            endAngle={450}
+            innerRadius="33%"
+            isAnimationActive={true}
+            label={renderLabel}
+            labelLine={false}
+            outerRadius="67%"
+            startAngle={90}
+            stroke="none"
+          />
         </PieChart>
       </ResponsiveContainer>
       {selectedStatsEntries ? (
