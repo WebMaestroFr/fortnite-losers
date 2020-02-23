@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "eba183e9304d9cc7502087ccd49a4256",
+    "revision": "159f010106c34d4444c9a5042bad883c",
     "url": "/fortnite-losers/index.html"
   },
   {
-    "revision": "a368fb8c50f22beda3eb",
-    "url": "/fortnite-losers/static/css/main.ef643c97.chunk.css"
+    "revision": "1e094f70e365edf36c9d",
+    "url": "/fortnite-losers/static/css/main.e121fac5.chunk.css"
   },
   {
-    "revision": "dfadffb12e5510a737c2",
-    "url": "/fortnite-losers/static/js/2.fa1c0537.chunk.js"
+    "revision": "a6feb56af8ed11b06059",
+    "url": "/fortnite-losers/static/js/2.ec478dba.chunk.js"
   },
   {
     "revision": "efc015cd9ba288fae3493ffe257b695b",
-    "url": "/fortnite-losers/static/js/2.fa1c0537.chunk.js.LICENSE.txt"
+    "url": "/fortnite-losers/static/js/2.ec478dba.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a368fb8c50f22beda3eb",
-    "url": "/fortnite-losers/static/js/main.0f007e7f.chunk.js"
+    "revision": "1e094f70e365edf36c9d",
+    "url": "/fortnite-losers/static/js/main.62ad3531.chunk.js"
   },
   {
     "revision": "cb93d369013643db2989",
