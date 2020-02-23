@@ -1,17 +1,20 @@
-import React, { FC, useState } from "react";
+import React, { FC, useCallback, useState } from "react";
 import { Nav, Navbar } from "react-bootstrap";
 
 import { NavigationContext, navigationDefault } from "./index";
 
-export const NavigationProvider: FC = ({ children }) => {
+const NavigationProvider: FC = ({ children }) => {
   const [navigation, setNavigation] = useState<NavigationContext>(
     navigationDefault
   );
-  const handleSelect = (key: "category" | "tab") => (eventKey: string) =>
-    setNavigation(prevNavigation => ({
-      ...prevNavigation,
-      [key]: eventKey as NavigationContext["category"]
-    }));
+  const handleSelect = useCallback(
+    (key: "category" | "tab") => (eventKey: string) =>
+      setNavigation(prevNavigation => ({
+        ...prevNavigation,
+        [key]: eventKey as NavigationContext["category"]
+      })),
+    []
+  );
   return (
     <NavigationContext.Provider value={navigation}>
       <Navbar className="Navigation justify-content-between">

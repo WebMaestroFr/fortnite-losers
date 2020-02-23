@@ -7,7 +7,7 @@ import axios, {
 import { setup } from "axios-cache-adapter";
 import API_CONFIG from "../config/api.json";
 
-// Create `axios` instance with pre-configured `axios-cache-adapter` attached to it
+// Create `axios` instance with pre-configured `axios-cache-adapter`
 const api = setup({
   baseURL: "https://fortniteapi.io",
   cache: {
@@ -25,15 +25,11 @@ const handleResponse = (response: AxiosResponse) => response.data;
 const handleError = (requestError: AxiosError) =>
   Promise.reject(requestError.response);
 
-export default (config: AxiosRequestConfig) => {
+const handleRequest = (config: AxiosRequestConfig) => {
   const source = axios.CancelToken.source();
   let loading = true;
   return {
-    cancel: () => {
-      if (loading) {
-        source.cancel();
-      }
-    },
+    cancel: () => (loading ? source.cancel() : undefined),
     isLoading: () => loading,
     request: new Promise<AxiosResponse>((resolve, reject) => {
       const requestConfig = { ...config, cancelToken: source.token };
@@ -41,7 +37,7 @@ export default (config: AxiosRequestConfig) => {
       api.request(requestConfig).then(
         (response: AxiosResponse) => {
           loading = false;
-          console.info(requestName, { config, response });
+          console.log(requestName, { config, response });
           resolve(response);
         },
         (error: AxiosError | Cancel) => {
@@ -56,4 +52,18 @@ export default (config: AxiosRequestConfig) => {
       );
     }).then(handleResponse, handleError)
   };
+};
+
+export default (config: AxiosRequestConfig | AxiosRequestConfig[]) => {
+  if (Array.isArray(config)) {
+    const requests = config.map(c => handleRequest(c));
+    return {
+      cancel: () => requests.map(({ cancel }) => cancel()),
+      isLoading: () => requests.some(({ isLoading }) => isLoading()),
+      request: Promise.all<AxiosResponse>(
+        requests.map(({ request }) => request)
+      )
+    };
+  }
+  return handleRequest(config);
 };

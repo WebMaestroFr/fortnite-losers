@@ -50,6 +50,19 @@ body {
     margin-bottom: $spacer;
     text-align: center;
   }
+  h1,
+  h2,
+  h3,
+  .card,
+  .nav-link:not(.active) {
+    text-shadow: 0 0 2px rgba($black, 0.5);
+  }
+  svg {
+    text-shadow: none;
+  }
+  .progress {
+    box-shadow: 0 0 2px rgba($black, 0.5);
+  }
 }
 
 .card {
@@ -117,7 +130,7 @@ body {
   }
 }
 
-.PlayerStats-chart {
+.ChartPlaceTop {
   svg {
     overflow: visible;
   }

@@ -8,13 +8,6 @@ interface PlayerStats {
   kills: number;
   matchesplayed: number;
   minutesplayed: number;
-  placetop1: number;
-  placetop10: number;
-  placetop12: number;
-  placetop25: number;
-  placetop3: number;
-  placetop5: number;
-  placetop6: number;
   playersoutlived: number;
   score: number;
   winrate: number;
@@ -39,7 +32,13 @@ interface PlayerStatsSquad extends PlayerStats {
 }
 
 interface PlayerStatsCategories {
-  duo?: PlayerStatsDuo;
-  solo?: PlayerStatsSolo;
-  squad?: PlayerStatsSquad;
+  duo: PlayerStatsDuo;
+  solo: PlayerStatsSolo;
+  squad: PlayerStatsSquad;
+}
+
+interface Player {
+  account: PlayerAccount;
+  global_stats: PlayerStatsCategories;
+  name: string;
 }

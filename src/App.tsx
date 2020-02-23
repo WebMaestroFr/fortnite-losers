@@ -2,20 +2,11 @@ import React, { FC } from "react";
 import { Container } from "react-bootstrap";
 
 import "./App.scss";
-import PlayerList from "./components/Player/List";
+import PlayersList from "./components/Player/List";
+import CONFIG from "./config/index.json";
 import useNavigation from "./context/navigation";
 import NavigationProvider from "./context/navigation/Provider";
-
-const USERNAMES = [
-  "webmaestrofr",
-  "lojah01",
-  "Maxime_SMN",
-  "laplume_bob",
-  "Tibsim",
-  "Fabinoide",
-  "le_grin_che",
-  "RaskarKapak"
-];
+import PlayersProvider from "./context/players/Provider";
 
 const AppContent: FC = () => {
   const { tab } = useNavigation();
@@ -23,7 +14,11 @@ const AppContent: FC = () => {
     case "challenges":
       return <>Under construction.</>;
     default:
-      return <PlayerList usernames={USERNAMES} />;
+      return (
+        <PlayersProvider usernames={CONFIG.usernames}>
+          <PlayersList />
+        </PlayersProvider>
+      );
   }
 };
 
