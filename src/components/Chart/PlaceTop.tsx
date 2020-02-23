@@ -43,6 +43,8 @@ const ChartPlaceTop: FC<{
           </filter>
         </defs>
         <Pie
+          animationBegin={0}
+          animationDuration={800}
           dataKey="value"
           data={chartData}
           endAngle={450}

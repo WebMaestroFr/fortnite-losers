@@ -10,7 +10,7 @@ const PlayersList: FC = () => {
   const players = usePlayers();
   const { category } = useNavigation();
   return (
-    <Row as={FlipMove} className="PlayersList">
+    <Row as={FlipMove} className="PlayersList" duration={400}>
       {players
         .sort(
           (a, b) =>
