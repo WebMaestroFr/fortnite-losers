@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5b2de46fef4e01d5a6167ab39e26bb3c",
+    "revision": "a1e5d3c30b008314cdfca92af65d798b",
     "url": "/fortnite-losers/index.html"
   },
   {
-    "revision": "29497dcc915173d74390",
+    "revision": "514929da292d962e8685",
     "url": "/fortnite-losers/static/css/main.e121fac5.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/fortnite-losers/static/js/2.9f8bcdab.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "29497dcc915173d74390",
-    "url": "/fortnite-losers/static/js/main.c9397b34.chunk.js"
+    "revision": "514929da292d962e8685",
+    "url": "/fortnite-losers/static/js/main.33e97317.chunk.js"
   },
   {
     "revision": "cb93d369013643db2989",

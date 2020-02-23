@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/fortnite-losers/static/css/main.e121fac5.chunk.css",
-    "main.js": "/fortnite-losers/static/js/main.c9397b34.chunk.js",
-    "main.js.map": "/fortnite-losers/static/js/main.c9397b34.chunk.js.map",
+    "main.js": "/fortnite-losers/static/js/main.33e97317.chunk.js",
+    "main.js.map": "/fortnite-losers/static/js/main.33e97317.chunk.js.map",
     "runtime-main.js": "/fortnite-losers/static/js/runtime-main.d5753d10.js",
     "runtime-main.js.map": "/fortnite-losers/static/js/runtime-main.d5753d10.js.map",
     "static/js/2.9f8bcdab.chunk.js": "/fortnite-losers/static/js/2.9f8bcdab.chunk.js",
     "static/js/2.9f8bcdab.chunk.js.map": "/fortnite-losers/static/js/2.9f8bcdab.chunk.js.map",
     "index.html": "/fortnite-losers/index.html",
-    "precache-manifest.5247f3f329ee28da86fcf6aebb337c52.js": "/fortnite-losers/precache-manifest.5247f3f329ee28da86fcf6aebb337c52.js",
+    "precache-manifest.78de6703633cf067276ccdb8ae6144ca.js": "/fortnite-losers/precache-manifest.78de6703633cf067276ccdb8ae6144ca.js",
     "service-worker.js": "/fortnite-losers/service-worker.js",
     "static/css/main.e121fac5.chunk.css.map": "/fortnite-losers/static/css/main.e121fac5.chunk.css.map",
     "static/js/2.9f8bcdab.chunk.js.LICENSE.txt": "/fortnite-losers/static/js/2.9f8bcdab.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.d5753d10.js",
     "static/js/2.9f8bcdab.chunk.js",
     "static/css/main.e121fac5.chunk.css",
-    "static/js/main.c9397b34.chunk.js"
+    "static/js/main.33e97317.chunk.js"
   ]
 }
