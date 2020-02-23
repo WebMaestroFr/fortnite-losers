@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { Col, Row } from "react-bootstrap";
+import FlipMove from "react-flip-move";
 
 import useNavigation from "../../context/navigation";
 import usePlayers from "../../context/players";
@@ -9,7 +10,7 @@ const PlayersList: FC = () => {
   const players = usePlayers();
   const { category } = useNavigation();
   return (
-    <Row className="PlayersList">
+    <Row as={FlipMove} className="PlayersList">
       {players
         .sort(
           (a, b) =>
