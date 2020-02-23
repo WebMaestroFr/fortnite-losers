@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/fortnite-losers/static/css/main.e121fac5.chunk.css",
-    "main.js": "/fortnite-losers/static/js/main.62ad3531.chunk.js",
-    "main.js.map": "/fortnite-losers/static/js/main.62ad3531.chunk.js.map",
+    "main.js": "/fortnite-losers/static/js/main.c9397b34.chunk.js",
+    "main.js.map": "/fortnite-losers/static/js/main.c9397b34.chunk.js.map",
     "runtime-main.js": "/fortnite-losers/static/js/runtime-main.d5753d10.js",
     "runtime-main.js.map": "/fortnite-losers/static/js/runtime-main.d5753d10.js.map",
-    "static/js/2.ec478dba.chunk.js": "/fortnite-losers/static/js/2.ec478dba.chunk.js",
-    "static/js/2.ec478dba.chunk.js.map": "/fortnite-losers/static/js/2.ec478dba.chunk.js.map",
+    "static/js/2.9f8bcdab.chunk.js": "/fortnite-losers/static/js/2.9f8bcdab.chunk.js",
+    "static/js/2.9f8bcdab.chunk.js.map": "/fortnite-losers/static/js/2.9f8bcdab.chunk.js.map",
     "index.html": "/fortnite-losers/index.html",
-    "precache-manifest.4113300a6421abfc4bd6ed9b4c90623e.js": "/fortnite-losers/precache-manifest.4113300a6421abfc4bd6ed9b4c90623e.js",
+    "precache-manifest.5247f3f329ee28da86fcf6aebb337c52.js": "/fortnite-losers/precache-manifest.5247f3f329ee28da86fcf6aebb337c52.js",
     "service-worker.js": "/fortnite-losers/service-worker.js",
     "static/css/main.e121fac5.chunk.css.map": "/fortnite-losers/static/css/main.e121fac5.chunk.css.map",
-    "static/js/2.ec478dba.chunk.js.LICENSE.txt": "/fortnite-losers/static/js/2.ec478dba.chunk.js.LICENSE.txt",
+    "static/js/2.9f8bcdab.chunk.js.LICENSE.txt": "/fortnite-losers/static/js/2.9f8bcdab.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/fortnite-losers/static/media/BurbankBigRegular-Black.b60d2274.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.d5753d10.js",
-    "static/js/2.ec478dba.chunk.js",
+    "static/js/2.9f8bcdab.chunk.js",
     "static/css/main.e121fac5.chunk.css",
-    "static/js/main.62ad3531.chunk.js"
+    "static/js/main.c9397b34.chunk.js"
   ]
 }
