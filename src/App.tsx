@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { Container } from "react-bootstrap";
 
 import "./App.scss";
+import ChartKillsPerDeath from "./components/Chart/KillsPerDeath";
 import PlayersList from "./components/Player/List";
 import CONFIG from "./config/index.json";
 import useNavigation from "./context/navigation";
@@ -17,6 +18,8 @@ const AppContent: FC = () => {
       return (
         <PlayersProvider usernames={CONFIG.usernames}>
           <PlayersList />
+          <h2>Kills per Death</h2>
+          <ChartKillsPerDeath />
         </PlayersProvider>
       );
   }

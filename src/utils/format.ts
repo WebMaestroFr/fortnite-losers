@@ -11,7 +11,7 @@ export const formatStatColor = (name: string) => {
     case "placetop25":
       return "#28a745";
     default:
-      return "#ccc";
+      return "#ced4da";
   }
 };
 

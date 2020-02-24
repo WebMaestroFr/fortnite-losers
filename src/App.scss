@@ -48,7 +48,6 @@ body {
   }
   .App-header {
     margin-bottom: $spacer;
-    text-align: center;
   }
   h1,
   h2,
@@ -57,8 +56,13 @@ body {
   .nav-link:not(.active) {
     text-shadow: 0 0 2px rgba($black, 0.5);
   }
+  h1,
+  h2 {
+    text-align: center;
+  }
   svg {
     text-shadow: none;
+    overflow: visible;
   }
   .progress {
     box-shadow: 0 0 2px rgba($black, 0.5);
@@ -73,7 +77,6 @@ body {
     .card-title {
       line-height: 0;
       margin-bottom: 2 * $spacer;
-      text-align: center;
     }
   }
 }
@@ -93,6 +96,10 @@ body {
       }
     }
   }
+}
+
+.PlayersList {
+  margin-bottom: 2 * $spacer;
 }
 
 .PlayerStats {
@@ -130,12 +137,7 @@ body {
   }
 }
 
-.ChartPlaceTop {
-  svg {
-    overflow: visible;
-  }
-  .recharts-pie-label-text {
-    @extend .fortnite-style-uppercase;
-    font-size: 1.2em;
-  }
+.recharts-text {
+  @extend .fortnite-style;
+  font-size: 1.2em;
 }
