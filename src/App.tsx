@@ -5,6 +5,7 @@ import "./App.scss";
 import ChartKillsPerDeath from "./components/Chart/KillsPerDeath";
 import PlayersList from "./components/Player/List";
 import CONFIG from "./config/index.json";
+import ChallengesProvider from "./context/challenges/Provider";
 import useNavigation from "./context/navigation";
 import NavigationProvider from "./context/navigation/Provider";
 import PlayersProvider from "./context/players/Provider";
@@ -13,7 +14,7 @@ const AppContent: FC = () => {
   const { tab } = useNavigation();
   switch (tab) {
     case "challenges":
-      return <>Under construction.</>;
+      return <ChallengesProvider usernames={CONFIG.usernames} />;
     default:
       return (
         <PlayersProvider usernames={CONFIG.usernames}>
