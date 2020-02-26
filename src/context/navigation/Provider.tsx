@@ -30,21 +30,23 @@ const NavigationProvider: FC = ({ children }) => {
             <Nav.Link eventKey="challenges">Challenges</Nav.Link>
           </Nav.Item>
         </Nav>
-        <Nav
-          variant="pills"
-          activeKey={navigation.category}
-          onSelect={handleSelect("category")}
-        >
-          <Nav.Item>
-            <Nav.Link eventKey="solo">Solo</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link eventKey="duo">Duo</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link eventKey="squad">Squad</Nav.Link>
-          </Nav.Item>
-        </Nav>
+        {navigation.tab === "stats" ? (
+          <Nav
+            variant="pills"
+            activeKey={navigation.category}
+            onSelect={handleSelect("category")}
+          >
+            <Nav.Item>
+              <Nav.Link eventKey="solo">Solo</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="duo">Duo</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="squad">Squad</Nav.Link>
+            </Nav.Item>
+          </Nav>
+        ) : null}
       </Navbar>
       {children}
     </NavigationContext.Provider>

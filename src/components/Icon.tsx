@@ -1,6 +1,7 @@
 import {
-  faSortAmountDown,
-  faSortAmountUp
+  faCheckSquare,
+  faSquare,
+  faStar
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { FC } from "react";
@@ -10,10 +11,12 @@ import React, { FC } from "react";
 
 const getIconFromName = (name: string) => {
   switch (name) {
-    case "sort-down":
-      return faSortAmountDown;
-    case "sort-up":
-      return faSortAmountUp;
+    case "check-off":
+      return faSquare;
+    case "check-on":
+      return faCheckSquare;
+    case "star":
+      return faStar;
     default:
       console.warn(`Icon "${name}" not imported.`);
       return null;

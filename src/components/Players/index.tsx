@@ -6,11 +6,11 @@ import useNavigation from "../../context/navigation";
 import usePlayers from "../../context/players";
 import PlayerCard from "./Card";
 
-const PlayersList: FC = () => {
+const PlayersCards: FC = () => {
   const players = usePlayers();
   const { category } = useNavigation();
   return (
-    <Row as={FlipMove} className="PlayersList" duration={400}>
+    <Row as={FlipMove} className="PlayersCards" duration={400}>
       {players
         .sort(
           (a, b) =>
@@ -25,4 +25,4 @@ const PlayersList: FC = () => {
   );
 };
 
-export default PlayersList;
+export default PlayersCards;

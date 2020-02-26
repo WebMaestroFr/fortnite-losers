@@ -4,10 +4,7 @@ import { Spinner } from "react-bootstrap";
 import { challenges as requestChallenges } from "../../utils/fortnite";
 import { ChallengesContext, challengesDefault } from "./index";
 
-const ChallengesProvider: FC<{ usernames: string[] }> = ({
-  children,
-  usernames
-}) => {
+const ChallengesProvider: FC = ({ children }) => {
   const [challenges, setChallenges] = useState<ChallengesContext>(
     challengesDefault
   );
@@ -22,7 +19,7 @@ const ChallengesProvider: FC<{ usernames: string[] }> = ({
       }, console.error)
       .finally(() => setLoading(false));
     return cancel;
-  }, [usernames]);
+  }, []);
   if (loading) {
     return (
       <Spinner animation="border" role="status" variant="light">
@@ -33,9 +30,6 @@ const ChallengesProvider: FC<{ usernames: string[] }> = ({
   return (
     <ChallengesContext.Provider value={challenges}>
       {children}
-      <pre style={{ color: "white" }}>
-        {JSON.stringify(challenges, null, 2)}
-      </pre>
     </ChallengesContext.Provider>
   );
 };

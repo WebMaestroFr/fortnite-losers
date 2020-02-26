@@ -2,8 +2,9 @@ import React, { FC } from "react";
 import { Container } from "react-bootstrap";
 
 import "./App.scss";
+import ChallengesWeeks from "./components/Challenges/Weeks";
 import ChartKillsPerDeath from "./components/Chart/KillsPerDeath";
-import PlayersList from "./components/Player/List";
+import PlayersCards from "./components/Players";
 import CONFIG from "./config/index.json";
 import ChallengesProvider from "./context/challenges/Provider";
 import useNavigation from "./context/navigation";
@@ -14,11 +15,15 @@ const AppContent: FC = () => {
   const { tab } = useNavigation();
   switch (tab) {
     case "challenges":
-      return <ChallengesProvider usernames={CONFIG.usernames} />;
+      return (
+        <ChallengesProvider>
+          <ChallengesWeeks />
+        </ChallengesProvider>
+      );
     default:
       return (
         <PlayersProvider usernames={CONFIG.usernames}>
-          <PlayersList />
+          <PlayersCards />
           <h2>Kills per Death</h2>
           <ChartKillsPerDeath />
         </PlayersProvider>

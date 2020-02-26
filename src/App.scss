@@ -26,7 +26,7 @@
 }
 
 body {
-  background: linear-gradient(to bottom right, darken($blue, 15%), $cyan);
+  background: linear-gradient(to bottom right, darken($blue, 15%), $secondary);
   min-height: 100vh;
 }
 
@@ -89,7 +89,7 @@ body {
     .nav-link {
       color: $white;
       &:hover {
-        color: lighten($cyan, 30%);
+        color: lighten($secondary, 30%);
       }
       &.active {
         color: $nav-pills-link-active-color;
@@ -98,12 +98,69 @@ body {
   }
 }
 
-.PlayersList {
+.recharts-text {
+  @extend .fortnite-style;
+  font-size: 1.2em;
+}
+
+.ChallengeItem {
+  @extend .fortnite-style;
+  position: relative;
+  padding: 0 0 1.5rem 1.75rem;
+  margin: 0 0 1rem 0;
+  > .Icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .ChallengeItem-title {
+    line-height: 1.1;
+    padding: 0 0 0.25rem 0;
+  }
+  .ChallengeItem-stars {
+    font-size: small;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: $yellow;
+  }
+  .ChallengeItem-xp {
+    font-size: small;
+    position: absolute;
+    bottom: 0;
+    left: 1.75rem;
+    color: lighten($secondary, 30%);
+  }
+  .progress {
+    height: 0.25rem;
+    .progress-bar {
+      background-color: $purple;
+    }
+  }
+  &:hover {
+    cursor: pointer;
+    > .Icon {
+      color: lighten($secondary, 30%);
+    }
+    .progress {
+      background-color: lighten($secondary, 30%);
+    }
+  }
+}
+
+.ChallengesWeek {
+  .card-img-top {
+    object-fit: cover;
+    height: 280px;
+  }
+}
+
+.PlayersCards {
   margin-bottom: 2 * $spacer;
 }
 
 .PlayerStats {
-  color: lighten($cyan, 30%);
+  color: lighten($secondary, 30%);
   .PlayerStats-header {
     .PlayerStats-level {
       @extend .fortnite-style-uppercase;
@@ -135,9 +192,4 @@ body {
       color: $light;
     }
   }
-}
-
-.recharts-text {
-  @extend .fortnite-style;
-  font-size: 1.2em;
 }
