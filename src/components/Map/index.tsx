@@ -7,11 +7,7 @@ import SRC from "../../assets/map.png";
 
 const FortniteMap: FC = () => (
   <div className="FortniteMap">
-    <TransformWrapper
-      defaultPositionY={0}
-      options={{ limitToWrapper: true }}
-      wheel={{ step: 64 }}
-    >
+    <TransformWrapper options={{ limitToWrapper: true }} wheel={{ step: 64 }}>
       <TransformComponent>
         <Image fluid={true} src={SRC} />
       </TransformComponent>

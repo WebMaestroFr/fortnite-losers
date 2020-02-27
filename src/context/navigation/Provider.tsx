@@ -1,5 +1,5 @@
 import React, { FC, useCallback, useState } from "react";
-import { Nav, Navbar } from "react-bootstrap";
+import { Col, Nav, Navbar, Row } from "react-bootstrap";
 
 import { NavigationContext, navigationDefault } from "./index";
 
@@ -17,40 +17,45 @@ const NavigationProvider: FC = ({ children }) => {
   );
   return (
     <NavigationContext.Provider value={navigation}>
-      <Navbar className="Navigation justify-content-between">
-        <Nav
-          variant="pills"
-          activeKey={navigation.tab}
-          onSelect={handleSelect("tab")}
-        >
-          <Nav.Item>
-            <Nav.Link eventKey="stats">Stats</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link eventKey="challenges">Challenges</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link eventKey="map">Map</Nav.Link>
-          </Nav.Item>
-        </Nav>
-        {navigation.tab === "stats" ? (
+      <Row className="Navigation">
+        <Col as="h1" xl={4}>
+          Fortnite Losers
+        </Col>
+        <Col as={Navbar} className="justify-content-between" xl={8}>
           <Nav
             variant="pills"
-            activeKey={navigation.category}
-            onSelect={handleSelect("category")}
+            activeKey={navigation.tab}
+            onSelect={handleSelect("tab")}
           >
             <Nav.Item>
-              <Nav.Link eventKey="solo">Solo</Nav.Link>
+              <Nav.Link eventKey="stats">Stats</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="duo">Duo</Nav.Link>
+              <Nav.Link eventKey="challenges">Challenges</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="squad">Squad</Nav.Link>
+              <Nav.Link eventKey="map">Map</Nav.Link>
             </Nav.Item>
           </Nav>
-        ) : null}
-      </Navbar>
+          {navigation.tab === "stats" ? (
+            <Nav
+              variant="pills"
+              activeKey={navigation.category}
+              onSelect={handleSelect("category")}
+            >
+              <Nav.Item>
+                <Nav.Link eventKey="solo">Solo</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="duo">Duo</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="squad">Squad</Nav.Link>
+              </Nav.Item>
+            </Nav>
+          ) : null}
+        </Col>
+      </Row>
       {children}
     </NavigationContext.Provider>
   );

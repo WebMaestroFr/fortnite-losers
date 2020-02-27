@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { Container } from "react-bootstrap";
 
 import "./App.scss";
-import ChallengesWeeks from "./components/Challenges/Weeks";
+import ChallengesCards from "./components/Challenges";
 import ChartKillsPerDeath from "./components/Chart/KillsPerDeath";
 import FortniteMap from "./components/Map";
 import PlayersCards from "./components/Players";
@@ -18,7 +18,7 @@ const AppContent: FC = () => {
     case "challenges":
       return (
         <ChallengesProvider>
-          <ChallengesWeeks />
+          <ChallengesCards />
         </ChallengesProvider>
       );
     case "map":
@@ -36,14 +36,9 @@ const AppContent: FC = () => {
 
 const App = () => (
   <Container className="App">
-    <header className="App-header">
-      <h1>Fortnite Losers</h1>
-    </header>
-    <main className="App-main">
-      <NavigationProvider>
-        <AppContent />
-      </NavigationProvider>
-    </main>
+    <NavigationProvider>
+      <AppContent />
+    </NavigationProvider>
   </Container>
 );
 
