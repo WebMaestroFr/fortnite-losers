@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "77e3935ebe9ba7e9dcb0d7257f7d67ca",
+    "revision": "ccca27d5731288b9d3cf16356ddc0c08",
     "url": "/fortnite-losers/index.html"
   },
   {
-    "revision": "8e96da85a2da4fc832a8",
-    "url": "/fortnite-losers/static/css/main.b028b67c.chunk.css"
+    "revision": "1fa6da3b863390dacf7b",
+    "url": "/fortnite-losers/static/css/main.4222be6a.chunk.css"
   },
   {
-    "revision": "32095a32de1d92a30624",
-    "url": "/fortnite-losers/static/js/2.9e73ff4e.chunk.js"
+    "revision": "5d3bf9eb9a9ae4859c6c",
+    "url": "/fortnite-losers/static/js/2.513903b9.chunk.js"
   },
   {
     "revision": "efc015cd9ba288fae3493ffe257b695b",
-    "url": "/fortnite-losers/static/js/2.9e73ff4e.chunk.js.LICENSE.txt"
+    "url": "/fortnite-losers/static/js/2.513903b9.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8e96da85a2da4fc832a8",
-    "url": "/fortnite-losers/static/js/main.06ec6583.chunk.js"
+    "revision": "1fa6da3b863390dacf7b",
+    "url": "/fortnite-losers/static/js/main.8898565a.chunk.js"
   },
   {
     "revision": "cb93d369013643db2989",
@@ -42,5 +42,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "b60d2274b782c64bbe0f39c065f1bfa5",
     "url": "/fortnite-losers/static/media/BurbankBigRegular-Black.b60d2274.svg"
+  },
+  {
+    "revision": "02a0c9802bc19d4fbb12f2b2f9a2edb2",
+    "url": "/fortnite-losers/static/media/map.02a0c980.png"
   }
 ]);

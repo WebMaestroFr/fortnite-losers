@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/fortnite-losers/static/css/main.b028b67c.chunk.css",
-    "main.js": "/fortnite-losers/static/js/main.06ec6583.chunk.js",
-    "main.js.map": "/fortnite-losers/static/js/main.06ec6583.chunk.js.map",
+    "main.css": "/fortnite-losers/static/css/main.4222be6a.chunk.css",
+    "main.js": "/fortnite-losers/static/js/main.8898565a.chunk.js",
+    "main.js.map": "/fortnite-losers/static/js/main.8898565a.chunk.js.map",
     "runtime-main.js": "/fortnite-losers/static/js/runtime-main.d5753d10.js",
     "runtime-main.js.map": "/fortnite-losers/static/js/runtime-main.d5753d10.js.map",
-    "static/js/2.9e73ff4e.chunk.js": "/fortnite-losers/static/js/2.9e73ff4e.chunk.js",
-    "static/js/2.9e73ff4e.chunk.js.map": "/fortnite-losers/static/js/2.9e73ff4e.chunk.js.map",
+    "static/js/2.513903b9.chunk.js": "/fortnite-losers/static/js/2.513903b9.chunk.js",
+    "static/js/2.513903b9.chunk.js.map": "/fortnite-losers/static/js/2.513903b9.chunk.js.map",
     "index.html": "/fortnite-losers/index.html",
-    "precache-manifest.a3b2140fa463474498c43b2fa7b1619c.js": "/fortnite-losers/precache-manifest.a3b2140fa463474498c43b2fa7b1619c.js",
+    "precache-manifest.1dabae76af87e749b657ff82753b6ada.js": "/fortnite-losers/precache-manifest.1dabae76af87e749b657ff82753b6ada.js",
     "service-worker.js": "/fortnite-losers/service-worker.js",
-    "static/css/main.b028b67c.chunk.css.map": "/fortnite-losers/static/css/main.b028b67c.chunk.css.map",
-    "static/js/2.9e73ff4e.chunk.js.LICENSE.txt": "/fortnite-losers/static/js/2.9e73ff4e.chunk.js.LICENSE.txt",
-    "static/media/App.scss": "/fortnite-losers/static/media/BurbankBigRegular-Black.b60d2274.svg"
+    "static/css/main.4222be6a.chunk.css.map": "/fortnite-losers/static/css/main.4222be6a.chunk.css.map",
+    "static/js/2.513903b9.chunk.js.LICENSE.txt": "/fortnite-losers/static/js/2.513903b9.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "/fortnite-losers/static/media/BurbankBigRegular-Black.b60d2274.svg",
+    "static/media/map.png": "/fortnite-losers/static/media/map.02a0c980.png"
   },
   "entrypoints": [
     "static/js/runtime-main.d5753d10.js",
-    "static/js/2.9e73ff4e.chunk.js",
-    "static/css/main.b028b67c.chunk.css",
-    "static/js/main.06ec6583.chunk.js"
+    "static/js/2.513903b9.chunk.js",
+    "static/css/main.4222be6a.chunk.css",
+    "static/js/main.8898565a.chunk.js"
   ]
 }
