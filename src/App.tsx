@@ -4,6 +4,7 @@ import { Container } from "react-bootstrap";
 import "./App.scss";
 import ChallengesWeeks from "./components/Challenges/Weeks";
 import ChartKillsPerDeath from "./components/Chart/KillsPerDeath";
+import FortniteMap from "./components/Map";
 import PlayersCards from "./components/Players";
 import CONFIG from "./config/index.json";
 import ChallengesProvider from "./context/challenges/Provider";
@@ -20,6 +21,8 @@ const AppContent: FC = () => {
           <ChallengesWeeks />
         </ChallengesProvider>
       );
+    case "map":
+      return <FortniteMap />;
     default:
       return (
         <PlayersProvider usernames={CONFIG.usernames}>

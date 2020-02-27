@@ -1,12 +1,22 @@
 import React, { FC } from "react";
 import { Image } from "react-bootstrap";
+import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
+
+import SRC from "../../assets/map.png";
+// const SRC = "https://fortniteapi.io/images/map.png";
 
 const FortniteMap: FC = () => (
-  <Image
-    className="FortniteMap"
-    fluid={true}
-    src="https://fortniteapi.io/images/map.png"
-  />
+  <div className="FortniteMap">
+    <TransformWrapper
+      defaultPositionY={0}
+      options={{ limitToWrapper: true }}
+      wheel={{ step: 64 }}
+    >
+      <TransformComponent>
+        <Image fluid={true} src={SRC} />
+      </TransformComponent>
+    </TransformWrapper>
+  </div>
 );
 
 export default FortniteMap;

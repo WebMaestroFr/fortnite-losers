@@ -29,6 +29,9 @@ const NavigationProvider: FC = ({ children }) => {
           <Nav.Item>
             <Nav.Link eventKey="challenges">Challenges</Nav.Link>
           </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="map">Map</Nav.Link>
+          </Nav.Item>
         </Nav>
         {navigation.tab === "stats" ? (
           <Nav

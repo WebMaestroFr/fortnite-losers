@@ -47,7 +47,12 @@ body {
     @extend .fortnite-style;
   }
   .App-header {
+    position: relative;
     margin-bottom: $spacer;
+  }
+  .App-header,
+  .Navigation {
+    z-index: 2;
   }
   h1,
   h2,
@@ -152,6 +157,19 @@ body {
   .card-img-top {
     object-fit: cover;
     height: 280px;
+  }
+}
+
+.FortniteMap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  cursor: grab;
+  > div {
+    max-height: 100vh;
   }
 }
 
