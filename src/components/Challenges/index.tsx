@@ -9,11 +9,13 @@ const ChallengesCards: FC = () => {
   const { weeks } = useChallenges();
   return (
     <Row as={FlipMove} className="ChallengesCards" duration={400}>
-      {Object.entries(weeks).map(([key, week]) => (
-        <Col key={key} md={6}>
-          <ChallengesWeek {...week} />
-        </Col>
-      ))}
+      {Object.entries(weeks)
+        .reverse()
+        .map(([key, week]) => (
+          <Col key={key} md={6}>
+            <ChallengesWeek {...week} />
+          </Col>
+        ))}
     </Row>
   );
 };
