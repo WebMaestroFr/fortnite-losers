@@ -12,6 +12,7 @@ const PlayersCards: FC = () => {
   return (
     <Row as={FlipMove} className="PlayersCards" duration={400}>
       {players
+        .filter(player => player.global_stats[category])
         .sort(
           (a, b) =>
             b.global_stats[category].winrate - a.global_stats[category].winrate
